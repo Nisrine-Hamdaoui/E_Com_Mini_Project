@@ -1,0 +1,57 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "GetUserCart";
+}
+<div style="width:90%;margin:auto" class="mt-2">
+    @if (Model != null && Model.CartLines != null && Model.CartLines.Count > 0)
+    {
+        <h2 class="text-center">My Cart</h2>
+
+        <table class="table table-striped">
+            <tr class="table-dark">
+                <th>Image</th>
+                <th>Product</th>
+                <th>Ctaegory</th>
+                <th>Unit Price(Dh)</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var item in Model.CartLines)
+            {
+                <tr class="table-light">
+                    <td>
+
+                        @* <img src="@item.Product.Image" style="width:80px;height:100px" /> *@
+                        <img src="~/Image/@item.Product.Image" class="image-list">
+
+                    </td>
+                    <td>@item.Product.Nom</td>
+                    <td>@item.Product.Category.Nom</td>
+                    <td>@item.Product.Prix X @item.Quantity</td>
+                    <td>@(item.Product.Prix * item.Quantity)</td>
+                    <td>
+                         <a class="btn btn-info" href="/Cart/AddItem?productId=@item.ProductId&&redirect=1">+</a> 
+                         <a class="btn btn-info" href="/cart/removeitem?productid=@item.ProductId">-</a>
+
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div class="my-2">
+            <h5>Total(Dh): </h5>
+            @(Model.CartLines.Select(item => item.Product.Prix * item.Quantity).Sum())
+        </div>
+
+        <div class="my-2">
+            <a class="btn btn-primary" href="/Cart/Checkout">Checkout</a>
+        </div>
+
+    }
+    else
+    {
+        <h5>Cart is empty</h5>
+    }
+</div>
+
+

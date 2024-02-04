@@ -1,0 +1,12 @@
+﻿body {
+
+}
+.image-list {
+    width: 100px;*/ /* Spécifiez la largeur souhaitée */
+    height: auto;*/ /* La hauteur s'ajustera automatiquement pour maintenir les proportions de l'image */
+    
+}
+.image-home {
+    width: 100px;
+    height: 200px;
+}

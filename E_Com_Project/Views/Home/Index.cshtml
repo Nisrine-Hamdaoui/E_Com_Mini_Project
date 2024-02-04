@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Product>
+<div class="my-2">
+<form class="row row-cols-lg-auto g-3 align-items-center">
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormSelectPref">Categories</label>
+    <select class="form-select" id="CategoryId">
+      <option selected>Search By Category</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Search By Name</label>
+            <div class="input-group">
+                <div class="input-group-text"></div>
+                <input type="text" class="form-control" id="" placeholder="Search By Name">
+            </div>
+        </div>
+
+
+  <div class="col-12">
+            <button type="submit" class="btn btn-success">Search</button>
+  </div>
+</form>
+</div>
+
+<div class="w-100 mt-4 d-flex flex-wrap">
+    @foreach (var product in Model)
+    {
+        <div class="card mx-1 mb-4" style="width: 16rem;">
+            <img src="@Url.Content("~/Image/" + product.Image)" class="card-img-top image-home" alt="@product.Nom">
+            <div class="card-body">
+                <h5 class="card-title">@product.Nom</h5>
+                <p class="card-text text-dark">
+                    <b>Prix:</b> @product.Prix
+                    <br />
+                    <b>Quantité:</b> @product.QteStock
+                </p>
+                <form asp-controller="Cart" asp-action="AddItem" method="post">
+                    <input type="hidden" name="productId" value="@product.Id" />
+                    <button type="submit" class="btn btn-primary">Add To Cart</button>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+
