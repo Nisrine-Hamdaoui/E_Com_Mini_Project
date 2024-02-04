@@ -1,0 +1,5 @@
+![ADMIN_List_Of_Categories](https://github.com/Nisrine-Hamdaoui/E_Com_Mini_Project/assets/93128563/15da8130-8a36-4d22-a23e-89f12b9da278)
+![ADMIN_List_Of_Products](https://github.com/Nisrine-Hamdaoui/E_Com_Mini_Project/assets/93128563/3c590760-5f0f-4b68-901e-bf05ad8073da)
+![Home_Page](https://github.com/Nisrine-Hamdaoui/E_Com_Mini_Project/assets/93128563/7a0aa0c7-b91e-4dbe-b089-f45c1bca865a)
+![USER_Cart](https://github.com/Nisrine-Hamdaoui/E_Com_Mini_Project/assets/93128563/7326fe47-9b38-41f3-849c-c9b06386fedf)
+![USER_Home_Page](https://github.com/Nisrine-Hamdaoui/E_Com_Mini_Project/assets/93128563/f1aea10e-07ca-445f-a269-2bf5fc49a163)
